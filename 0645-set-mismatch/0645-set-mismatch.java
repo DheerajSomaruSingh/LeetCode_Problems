@@ -1,25 +1,25 @@
 class Solution {
     public int[] findErrorNums(int[] nums) {
-        int[] arr = new int[nums.length];
-        int[] result = new int[2];
+     int x[] = new int[nums.length+1];
 
-        // Loop through each element in the 'nums' array
-        for (int i : nums) {
-            // Increment the count of occurrences of each element in 'arr'
-            arr[i - 1]++;
-        }
+     for(int i:nums){
+         x[i]++;
+     }
 
-        // Check 'arr' to find the duplicate and missing numbers
-        for (int i = 0; i < arr.length; i++) {
-            if (arr[i] == 2) {
-                result[0] = i + 1;  // Duplicate number
-            }
-            if (arr[i] == 0) {
-                result[1] = i + 1;  // Missing number
-            }
-        }
+     int dup=0 , miss=0;
 
-        return result;
+     for(int i=1;i<x.length;i++){
+         if(x[i]==2){
+             dup=i;
+         }
+         if(x[i] ==0){
+             miss=i;
+         }
+     }
+
+return new int[]{dup,miss};
+      
+        
     }
 }
 
