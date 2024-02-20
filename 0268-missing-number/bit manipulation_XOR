@@ -1,0 +1,9 @@
+class Solution {
+    public int missingNumber(int[] nums) {
+        int xorval = nums.length;
+        for(int i=0;i<nums.length;i++){
+            xorval = xorval ^ i ^ nums[i];
+        }
+        return xorval;
+    }
+}
