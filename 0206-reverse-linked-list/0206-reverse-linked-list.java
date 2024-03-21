@@ -11,6 +11,9 @@
 class Solution {
     public ListNode reverseList(ListNode head) {
         /*
+        
+        //loop
+        
         ListNode prev = null;
         ListNode cur = head;
         while(cur!=null){
@@ -23,6 +26,9 @@ class Solution {
 
         return prev;
         */
+        
+        //recursion
+        
         if(head==null || head.next==null){
             return head;
         }
